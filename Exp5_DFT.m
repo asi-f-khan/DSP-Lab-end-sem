@@ -1,7 +1,8 @@
 clc;
-clear all;
+clear;
+close all;
 x = zeros(1,100);
-for n = 1:100
+for n = 1:64
     x(n) = n;
 end
 N = 100;

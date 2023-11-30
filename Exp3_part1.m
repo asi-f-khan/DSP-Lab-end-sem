@@ -17,7 +17,7 @@ for n = 1:1:100
     x = [x ,50 * sin(2*pi*f2*n*ts) + 40 * sin(2*pi*f2*n*ts) + 15 * sin(2*pi*f3*n*ts)];
 end
 
-wc = (2*pi*100*ts);
+wc = (2*pi*fs);
 m = 51; % Choose an appropriate filter order (odd number)
 hd = zeros(1, m);
 
@@ -67,7 +67,7 @@ end
 % RECTANGULAR
 function h = rect(hd)
 m = length(hd);
-w = ones(1, m);
+w = ones(1, m); %important
 h = hd .* w;
 end
 

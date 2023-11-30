@@ -1,15 +1,19 @@
 %Ye bahot easy h -> bs sbke window function likho use baad uska freqz() and
 %angle(freqz()) plot kr do
 
+clc;
+clear;
+close all;
 N = 31;
 n = -15:1:15;
 
 % Ye sara function DSP me pdhe hain waha se dekh lo revise krne ke liye
-R = 1;
-D = 1 - (2 * (abs(n) / 30));
+A = ones(1, N); % Rectangular window
+D = 1 - (2 * (abs(n) / 30));  %Barlett
 E = 0.42 + 0.5 * cos((2 * pi * n) / 30) + 0.08 * cos((4 * pi * n) / 30);
 T = 0.54 + 0.46 * cos((2 * pi * n) / 30);
-W = 0.5 * (1 - cos(2 * pi * n / 30));
+
+W = 0.5 * (1 + cos(2 * pi * n / 30));
 
 %figure(1) %sare figure ko comment kr diya kyuki mujhe sb ek hi me chahiye
 subplot(10, 1, 1)
@@ -52,7 +56,7 @@ ylabel('phase(rad)')
 xlabel('frequency(hz)')
 
 %figure(5)
-A = ones(1, N); % Rectangular window
+
 subplot(10, 1, 9)
 plot(abs(freqz(A)));
 title('RECTANGULAR');

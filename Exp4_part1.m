@@ -1,12 +1,12 @@
 %STUDY OF FILTERING USING IIR FILTER
 clc
-clear all;
+clear;
 close all;
 
 Ts=1/4000;
 n=1:1000;
 z=1:1999;
-zs=z*ts;
+zs=z*Ts;
 x1=100*sin(2*pi*20*n*Ts);
 x2=200*sin(2*pi*30*n*Ts);
 x3=50*sin(2*pi*500*n*Ts);
@@ -91,6 +91,8 @@ for i=3:length(x)
 y(i)=a0*x(i-2)+a1*x(i-1)+a0*x(i)-b0*y(i-2)-b1*y(i-1);
 end
 end
+
+
 %filter by impulse invariant method
 function y=implinvar(fc,fs,x)
 c=2*pi*fc/fs;
