@@ -14,8 +14,11 @@ subplot(3,1,1);
 plot(w1,abs(h1));
 title('Highpass FIR Filter Frequency Response');
 
+f1=100; %Given
+f2=4900; %Given
+
 k = 1:500;
-x = sin(2*pi*100*k*ts) + sin(2*pi*4900*k*ts);
+x = sin(2*pi*f1*k*ts) + sin(2*pi*f2*k*ts);
 subplot(3,1,2);
 plot(x);
 title('Input Signal');
