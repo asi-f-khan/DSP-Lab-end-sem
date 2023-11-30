@@ -1,0 +1,12 @@
+clc;
+clear;
+close all;
+Rp = 1;
+Rs = 50;
+Wp = 0.4;
+Ws = 0.2;
+[n,Wn] = cheb1ord(Wp,Ws,Rp,Rs);
+[b,a] = cheby1(n,Rp,Wn,'high');
+[h,w] = freqz(b,a,512);
+plot(w,abs(h));
+title("High Pass Chebyshev Filter");
