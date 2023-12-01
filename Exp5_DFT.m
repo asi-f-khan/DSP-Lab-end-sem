@@ -2,7 +2,7 @@ clc;
 clear;
 close all;
 x = zeros(1,100);
-for n = 1:64
+for n = 1:100
     x(n) = n;
 end
 N = 100;

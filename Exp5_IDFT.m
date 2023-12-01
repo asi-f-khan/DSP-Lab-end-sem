@@ -1,6 +1,6 @@
 clc;
-close all
-clear all;
+clear;
+close all;
 
 X1 = [1,1+1i,2,1-1i];
 N1 = 4;
